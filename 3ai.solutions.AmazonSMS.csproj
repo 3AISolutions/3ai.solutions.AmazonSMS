@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>_3ai.solutions.AmazonSMS</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>2.$([System.DateTime]::UtcNow.Date.Subtract($([System.DateTime]::Parse("2000-01-01"))).TotalDays).$([System.DateTime]::UtcNow.Hour)</Version>
+		<PackageDescription>Implementation of 3ai.solutions storage interface for AWS S3</PackageDescription>
+		<RepositoryUrl>https://github.com/kapiosk/3ai.solutions.AmazonSMS/</RepositoryUrl>
+  </PropertyGroup>
+	<PropertyGroup>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
+		<None Include="README.md" Pack="true" PackagePath="README.md" />
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="3ai.solutions.Core" Version="2.8294.12" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.4.6" />
+  </ItemGroup>
+
+</Project>
