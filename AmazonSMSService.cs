@@ -50,7 +50,7 @@ namespace _3ai.solutions.AmazonSMS
             return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
         }
 
-        //SenderId & Transaction Type
+        //SenderId and Transaction Type
         public async Task<bool> SendSMSAsync(string message, string number, string senderId, string smsType, CancellationToken token = default)
         {
             using AmazonSimpleNotificationServiceClient client = new(_accessKey, _secretAccessKey, _region);
