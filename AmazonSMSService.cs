@@ -51,7 +51,7 @@ namespace _3ai.solutions.AmazonSMS
         }
 
         //SenderId & Transaction Type
-        public async Task<bool> SendSMSAsync(string message, string number, string senderId, SMSTypeCode smsType, CancellationToken token = default)
+        public async Task<bool> SendSMSAsync(string message, string number, string senderId, string smsType, CancellationToken token = default)
         {
             using AmazonSimpleNotificationServiceClient client = new(_accessKey, _secretAccessKey, _region);
             PublishRequest request = new()
@@ -60,7 +60,7 @@ namespace _3ai.solutions.AmazonSMS
                 PhoneNumber = number,
             };
             request.MessageAttributes.Add("AWS.SNS.SMS.SenderID", new MessageAttributeValue { StringValue = senderId, DataType = "String" });
-            request.MessageAttributes.Add("AWS.SNS.SMS.SMSType", new MessageAttributeValue { StringValue = smsType.ToString(), DataType = "String" });
+            request.MessageAttributes.Add("AWS.SNS.SMS.SMSType", new MessageAttributeValue { StringValue = smsType, DataType = "String" });
             var response = await client.PublishAsync(request, token);
             return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
         }
