@@ -18,8 +18,8 @@
 		<None Include="README.md" Pack="true" PackagePath="README.md" />
 	</ItemGroup>
   <ItemGroup>
-    <PackageReference Include="3ai.solutions.Core" Version="2.8296.8" />
-    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.4.6" />
+    <PackageReference Include="3ai.solutions.Core" Version="2.8682.7" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.200.53" />
   </ItemGroup>
 
 </Project>
